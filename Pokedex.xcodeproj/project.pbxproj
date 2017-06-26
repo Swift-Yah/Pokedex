@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04DEC8931F0175AE00BD2AF8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEC8921F0175AE00BD2AF8 /* API.swift */; };
 		23C536169BCCCE2C884D836E /* Pods_Pokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA861AF20AD46AC45C7E596 /* Pods_Pokedex.framework */; };
 		537662681F00AED500156EE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537662671F00AED500156EE5 /* AppDelegate.swift */; };
 		5376626A1F00AED500156EE5 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537662691F00AED500156EE5 /* HomeController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04DEC8921F0175AE00BD2AF8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1D8BA84F3FEBB15BC5240B6E /* Pods_PokedexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokedexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26FA69946098B8E447A91E41 /* Pods-Pokedex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedex.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pokedex/Pods-Pokedex.release.xcconfig"; sourceTree = "<group>"; };
 		537662641F00AED500156EE5 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04DEC8911F01757B00BD2AF8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				04DEC8921F0175AE00BD2AF8 /* API.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		1372DBB68261C7775EDA0201 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 			children = (
 				538C315D1F00B66200AC9AE6 /* Commons */,
 				538C315E1F00B66600AC9AE6 /* Controllers */,
+				04DEC8911F01757B00BD2AF8 /* Networking */,
 				538C315F1F00B66C00AC9AE6 /* Resources */,
 				538C31601F00B68300AC9AE6 /* Storyboards */,
 			);
@@ -205,6 +216,7 @@
 			buildConfigurationList = 5376628C1F00AED500156EE5 /* Build configuration list for PBXNativeTarget "Pokedex" */;
 			buildPhases = (
 				707BF2D29A0B759A63EF9E78 /* [CP] Check Pods Manifest.lock */,
+				04DEC8901F01736200BD2AF8 /* Generate Apollo GraphQL API */,
 				537662601F00AED500156EE5 /* Sources */,
 				537662611F00AED500156EE5 /* Frameworks */,
 				537662621F00AED500156EE5 /* Resources */,
@@ -334,6 +346,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04DEC8901F01736200BD2AF8 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output Networking/API.swift";
+		};
 		33F93AA30EDD0BFE50F046F7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -477,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5376626A1F00AED500156EE5 /* HomeController.swift in Sources */,
+				04DEC8931F0175AE00BD2AF8 /* API.swift in Sources */,
 				537662681F00AED500156EE5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
