@@ -15,7 +15,6 @@
 		537662721F00AED500156EE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537662701F00AED500156EE5 /* LaunchScreen.storyboard */; };
 		5376627D1F00AED500156EE5 /* PokedexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5376627C1F00AED500156EE5 /* PokedexTests.swift */; };
 		537662881F00AED500156EE5 /* PokedexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537662871F00AED500156EE5 /* PokedexUITests.swift */; };
-		5386D4681F00B90D00824103 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 537662731F00AED500156EE5 /* Info.plist */; };
 		A0135D06BB0507F7E09A6110 /* Pods_PokedexTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8BA84F3FEBB15BC5240B6E /* Pods_PokedexTests.framework */; };
 		B593A283EDBCE5DF1BFEFDA9 /* Pods_PokedexUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFF968916AE66FF9973D31B /* Pods_PokedexUITests.framework */; };
 /* End PBXBuildFile section */
@@ -312,7 +311,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5386D4681F00B90D00824103 /* Info.plist in Resources */,
 				537662721F00AED500156EE5 /* LaunchScreen.storyboard in Resources */,
 				5376626F1F00AED500156EE5 /* Assets.xcassets in Resources */,
 				5376626D1F00AED500156EE5 /* Main.storyboard in Resources */,
@@ -680,7 +678,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swift-yah.PokedexTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pokedex.app/Pokedex";
 			};
@@ -697,7 +695,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swift-yah.PokedexTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pokedex.app/Pokedex";
 			};
@@ -713,7 +711,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swift-yah.PokedexUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Pokedex;
 			};
@@ -729,7 +727,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swift-yah.PokedexUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Pokedex;
 			};
