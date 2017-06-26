@@ -14,6 +14,7 @@
 		537662721F00AED500156EE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 537662701F00AED500156EE5 /* LaunchScreen.storyboard */; };
 		5376627D1F00AED500156EE5 /* PokedexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5376627C1F00AED500156EE5 /* PokedexTests.swift */; };
 		537662881F00AED500156EE5 /* PokedexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537662871F00AED500156EE5 /* PokedexUITests.swift */; };
+		5386D4681F00B90D00824103 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 537662731F00AED500156EE5 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5386D4681F00B90D00824103 /* Info.plist in Resources */,
 				537662721F00AED500156EE5 /* LaunchScreen.storyboard in Resources */,
 				5376626F1F00AED500156EE5 /* Assets.xcassets in Resources */,
 				5376626D1F00AED500156EE5 /* Main.storyboard in Resources */,
@@ -454,7 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LQ5WW9469F;
-				INFOPLIST_FILE = Pokedex/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Pokedex/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swift-yah.Pokedex";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,7 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LQ5WW9469F;
-				INFOPLIST_FILE = Pokedex/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Pokedex/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swift-yah.Pokedex";
 				PRODUCT_NAME = "$(TARGET_NAME)";
