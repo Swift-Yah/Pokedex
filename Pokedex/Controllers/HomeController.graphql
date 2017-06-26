@@ -1,0 +1,8 @@
+query Trainer {
+    Trainer(name: "Rafael da Silva Ferreira") {
+        name
+        _ownedPokemonsMeta {
+            count
+        }
+    }
+}

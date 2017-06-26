@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0430A9171F01A30500438B77 /* HomeController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0430A9161F01A30500438B77 /* HomeController.graphql */; };
 		04AB3DE71F017DF3008A66C8 /* EnvironmentVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB3DE61F017DF3008A66C8 /* EnvironmentVariable.swift */; };
 		04AB3DE91F0181CE008A66C8 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB3DE81F0181CE008A66C8 /* APIClient.swift */; };
 		04DEC8931F0175AE00BD2AF8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEC8921F0175AE00BD2AF8 /* API.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0430A9161F01A30500438B77 /* HomeController.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HomeController.graphql; sourceTree = "<group>"; };
 		04AB3DE61F017DF3008A66C8 /* EnvironmentVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentVariable.swift; sourceTree = "<group>"; };
 		04AB3DE81F0181CE008A66C8 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		04DEC8921F0175AE00BD2AF8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				537662691F00AED500156EE5 /* HomeController.swift */,
+				0430A9161F01A30500438B77 /* HomeController.graphql */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0430A9171F01A30500438B77 /* HomeController.graphql in Resources */,
 				537662721F00AED500156EE5 /* LaunchScreen.storyboard in Resources */,
 				5376626F1F00AED500156EE5 /* Assets.xcassets in Resources */,
 				5376626D1F00AED500156EE5 /* Main.storyboard in Resources */,
