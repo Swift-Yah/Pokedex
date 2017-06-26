@@ -108,8 +108,8 @@
 		5376627B1F00AED500156EE5 /* PokedexTests */ = {
 			isa = PBXGroup;
 			children = (
-				5376627C1F00AED500156EE5 /* PokedexTests.swift */,
 				5376627E1F00AED500156EE5 /* Info.plist */,
+				5376627C1F00AED500156EE5 /* PokedexTests.swift */,
 			);
 			path = PokedexTests;
 			sourceTree = "<group>";
@@ -117,8 +117,8 @@
 		537662861F00AED500156EE5 /* PokedexUITests */ = {
 			isa = PBXGroup;
 			children = (
-				537662871F00AED500156EE5 /* PokedexUITests.swift */,
 				537662891F00AED500156EE5 /* Info.plist */,
+				537662871F00AED500156EE5 /* PokedexUITests.swift */,
 			);
 			path = PokedexUITests;
 			sourceTree = "<group>";
@@ -151,8 +151,8 @@
 		538C31601F00B68300AC9AE6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5376626B1F00AED500156EE5 /* Main.storyboard */,
 				537662701F00AED500156EE5 /* LaunchScreen.storyboard */,
+				5376626B1F00AED500156EE5 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -331,6 +331,7 @@
 				5376626C1F00AED500156EE5 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		537662701F00AED500156EE5 /* LaunchScreen.storyboard */ = {
@@ -339,6 +340,7 @@
 				537662711F00AED500156EE5 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
