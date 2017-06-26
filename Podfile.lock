@@ -1,0 +1,24 @@
+PODS:
+  - Apollo (0.6.0):
+    - Apollo/Core (= 0.6.0)
+  - Apollo/Core (0.6.0)
+
+DEPENDENCIES:
+  - Apollo (from `git@github.com:apollographql/apollo-ios.git`, tag `0.6.0`)
+
+EXTERNAL SOURCES:
+  Apollo:
+    :git: git@github.com:apollographql/apollo-ios.git
+    :tag: 0.6.0
+
+CHECKOUT OPTIONS:
+  Apollo:
+    :git: git@github.com:apollographql/apollo-ios.git
+    :tag: 0.6.0
+
+SPEC CHECKSUMS:
+  Apollo: a10f50929e6aa9989ce9bd3a179a132a2f517d87
+
+PODFILE CHECKSUM: 127e23ab780a95c3dc4f99cf64f1880c649f375e
+
+COCOAPODS: 1.2.1
