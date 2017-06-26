@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04AB3DE71F017DF3008A66C8 /* EnvironmentVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB3DE61F017DF3008A66C8 /* EnvironmentVariable.swift */; };
+		04AB3DE91F0181CE008A66C8 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB3DE81F0181CE008A66C8 /* APIClient.swift */; };
 		04DEC8931F0175AE00BD2AF8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DEC8921F0175AE00BD2AF8 /* API.swift */; };
 		23C536169BCCCE2C884D836E /* Pods_Pokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA861AF20AD46AC45C7E596 /* Pods_Pokedex.framework */; };
 		537662681F00AED500156EE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537662671F00AED500156EE5 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		04AB3DE61F017DF3008A66C8 /* EnvironmentVariable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentVariable.swift; sourceTree = "<group>"; };
+		04AB3DE81F0181CE008A66C8 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		04DEC8921F0175AE00BD2AF8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1D8BA84F3FEBB15BC5240B6E /* Pods_PokedexTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokedexTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26FA69946098B8E447A91E41 /* Pods-Pokedex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pokedex.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pokedex/Pods-Pokedex.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				04DEC8921F0175AE00BD2AF8 /* API.swift */,
+				04AB3DE81F0181CE008A66C8 /* APIClient.swift */,
 				04AB3DE61F017DF3008A66C8 /* EnvironmentVariable.swift */,
 			);
 			path = Networking;
@@ -508,6 +511,7 @@
 				5376626A1F00AED500156EE5 /* HomeController.swift in Sources */,
 				04DEC8931F0175AE00BD2AF8 /* API.swift in Sources */,
 				537662681F00AED500156EE5 /* AppDelegate.swift in Sources */,
+				04AB3DE91F0181CE008A66C8 /* APIClient.swift in Sources */,
 				04AB3DE71F017DF3008A66C8 /* EnvironmentVariable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
