@@ -50,8 +50,8 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elK-9k-h8i">
-                                            <rect key="frame" x="73" y="15.5" width="54" height="29"/>
-                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                            <rect key="frame" x="73" y="17" width="51" height="26.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
