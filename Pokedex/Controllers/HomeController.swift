@@ -9,6 +9,45 @@
 import UIKit
 
 final class HomeController: UITableViewController {
+    var trainer: TrainerQuery.Data.Trainer? {
+        didSet { tableView.reloadData() }
+    }
+}
+
+// MARK: UIViewController functions
+
+extension HomeController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        fetchTrainer()
+    }
+}
+
+// MARK: Private functions
+
+private extension HomeController {
+    func fetchTrainer() {
+        let trainerQuery = TrainerQuery()
+
+        APIClient.apollo.fetch(query: trainerQuery) { result, error in
+            if let error = error {
+                return self.onFailTrainerFetch(error: error)
+            }
+
+            self.onTrainerFetch(trainer: result?.data?.trainer)
+        }
+    }
+
+    func onTrainerFetch(trainer: TrainerQuery.Data.Trainer?) {
+        guard let trainer = trainer else { return }
+
+        self.trainer = trainer
+    }
+
+    func onFailTrainerFetch(error: Error) {
+        print(error)
+    }
 }
 
 // MARK: UITableViewDataSource conforms
@@ -19,8 +58,18 @@ extension HomeController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = indexPath.section == 0 ? "PokedexStatus" : "Pokedex"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let isFirstSection: Bool = indexPath.section == 0
+        let cellIdentifier: String = isFirstSection ? "PokedexStatus" : "Pokedex"
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+
+        cell.textLabel?.numberOfLines = 0
+
+        if isFirstSection, let name = trainer?.name?.components(separatedBy: " ").first,
+            let pokemonCount = trainer?.ownedPokemonsMeta.count {
+            cell.textLabel?.text = "Hello \(name), you have \(pokemonCount) Pokemons in your Pokedex."
+        } else {
+
+        }
 
         return cell
     }
