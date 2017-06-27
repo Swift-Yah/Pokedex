@@ -58,17 +58,25 @@ extension HomeController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let isFirstSection: Bool = indexPath.section == 0
-        let cellIdentifier: String = isFirstSection ? "PokedexStatus" : "Pokedex"
+        let cellIdentifier: String = indexPath.section == 0 ? "PokedexStatus" : "Pokedex"
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-
+        let count = trainer?.ownedPokemonsMeta.count ?? 0
+        
         cell.textLabel?.numberOfLines = 0
-
-        if isFirstSection, let name = trainer?.name?.components(separatedBy: " ").first,
-            let pokemonCount = trainer?.ownedPokemonsMeta.count {
-            cell.textLabel?.text = "Hello \(name), you have \(pokemonCount) Pokemons in your Pokedex."
-        } else {
-
+        
+        switch indexPath.section {
+        case 0:
+            let greeting: String
+            
+            if let name = trainer?.name?.components(separatedBy: " ").first {
+                greeting = "Hello \(name), you have \(count) Pokemons in your Pokedex."
+            } else {
+                greeting = "Hello, you have \(count) Pokemons in your Pokedex."
+            }
+            
+            cell.textLabel?.text = greeting
+            
+        default: break
         }
 
         return cell
