@@ -5,6 +5,7 @@ target 'Pokedex' do
 
   # Pods for Pokedex
   pod 'Apollo', :git => 'git@github.com:apollographql/apollo-ios.git', :tag => '0.6.0'
+  pod 'Kingfisher', '~> 3.0'
 
   target 'PokedexTests' do
     inherit! :search_paths

@@ -2,9 +2,11 @@ PODS:
   - Apollo (0.6.0):
     - Apollo/Core (= 0.6.0)
   - Apollo/Core (0.6.0)
+  - Kingfisher (3.10.2)
 
 DEPENDENCIES:
   - Apollo (from `git@github.com:apollographql/apollo-ios.git`, tag `0.6.0`)
+  - Kingfisher (~> 3.0)
 
 EXTERNAL SOURCES:
   Apollo:
@@ -18,7 +20,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Apollo: a10f50929e6aa9989ce9bd3a179a132a2f517d87
+  Kingfisher: 7297492bf8cec9b2e2dee3519f2219948580d98e
 
-PODFILE CHECKSUM: 127e23ab780a95c3dc4f99cf64f1880c649f375e
+PODFILE CHECKSUM: 071bde53a28d119afe6e6940e082bbbb04f633fb
 
 COCOAPODS: 1.2.1
