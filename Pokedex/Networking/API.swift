@@ -4,10 +4,15 @@ import Apollo
 
 public final class TrainerQuery: GraphQLQuery {
   public static let operationString =
-    "query Trainer {" +
-    "  Trainer(name: \"Rafael da Silva Ferreira\") {" +
+    "query Trainer($name: String!) {" +
+    "  Trainer(name: $name) {" +
     "    __typename" +
     "    name" +
+    "    ownedPokemons {" +
+    "      __typename" +
+    "      name" +
+    "      url" +
+    "    }" +
     "    _ownedPokemonsMeta {" +
     "      __typename" +
     "      count" +
@@ -15,14 +20,21 @@ public final class TrainerQuery: GraphQLQuery {
     "  }" +
     "}"
 
-  public init() {
+  public var name: String
+
+  public init(name: String) {
+    self.name = name
+  }
+
+  public var variables: GraphQLMap? {
+    return ["name": name]
   }
 
   public struct Data: GraphQLSelectionSet {
     public static let possibleTypes = ["Query"]
 
     public static let selections: [Selection] = [
-      Field("Trainer", arguments: ["name": "Rafael da Silva Ferreira"], type: .object(Data.Trainer.self)),
+      Field("Trainer", arguments: ["name": Variable("name")], type: .object(Data.Trainer.self)),
     ]
 
     public var snapshot: Snapshot
@@ -50,6 +62,7 @@ public final class TrainerQuery: GraphQLQuery {
       public static let selections: [Selection] = [
         Field("__typename", type: .nonNull(.scalar(String.self))),
         Field("name", type: .scalar(String.self)),
+        Field("ownedPokemons", type: .list(.nonNull(.object(Trainer.OwnedPokemon.self)))),
         Field("_ownedPokemonsMeta", type: .nonNull(.object(Trainer.OwnedPokemonsMetum.self))),
       ]
 
@@ -59,8 +72,8 @@ public final class TrainerQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(name: String? = nil, ownedPokemonsMeta: OwnedPokemonsMetum) {
-        self.init(snapshot: ["__typename": "Trainer", "name": name, "ownedPokemonsMeta": ownedPokemonsMeta])
+      public init(name: String? = nil, ownedPokemons: [OwnedPokemon]? = nil, ownedPokemonsMeta: OwnedPokemonsMetum) {
+        self.init(snapshot: ["__typename": "Trainer", "name": name, "ownedPokemons": ownedPokemons, "ownedPokemonsMeta": ownedPokemonsMeta])
       }
 
       public var __typename: String {
@@ -81,6 +94,15 @@ public final class TrainerQuery: GraphQLQuery {
         }
       }
 
+      public var ownedPokemons: [OwnedPokemon]? {
+        get {
+          return (snapshot["ownedPokemons"]! as! [Snapshot]?).flatMap { $0.map { OwnedPokemon(snapshot: $0) } }
+        }
+        set {
+          snapshot.updateValue(newValue.flatMap { $0.map { $0.snapshot } }, forKey: "ownedPokemons")
+        }
+      }
+
       /// Meta information about the query.
       public var ownedPokemonsMeta: OwnedPokemonsMetum {
         get {
@@ -88,6 +110,53 @@ public final class TrainerQuery: GraphQLQuery {
         }
         set {
           snapshot.updateValue(newValue.snapshot, forKey: "_ownedPokemonsMeta")
+        }
+      }
+
+      public struct OwnedPokemon: GraphQLSelectionSet {
+        public static let possibleTypes = ["Pokemon"]
+
+        public static let selections: [Selection] = [
+          Field("__typename", type: .nonNull(.scalar(String.self))),
+          Field("name", type: .scalar(String.self)),
+          Field("url", type: .scalar(String.self)),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(name: String? = nil, url: String? = nil) {
+          self.init(snapshot: ["__typename": "Pokemon", "name": name, "url": url])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var name: String? {
+          get {
+            return snapshot["name"]! as! String?
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "name")
+          }
+        }
+
+        public var url: String? {
+          get {
+            return snapshot["url"]! as! String?
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "url")
+          }
         }
       }
 

@@ -1,6 +1,10 @@
-query Trainer {
-    Trainer(name: "Rafael da Silva Ferreira") {
+query Trainer($name: String!) {
+    Trainer(name: $name) {
         name
+        ownedPokemons {
+            name
+            url
+        }
         _ownedPokemonsMeta {
             count
         }

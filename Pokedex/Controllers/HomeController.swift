@@ -28,7 +28,7 @@ extension HomeController {
 
 private extension HomeController {
     func fetchTrainer() {
-        let trainerQuery = TrainerQuery()
+        let trainerQuery = TrainerQuery(name: "Rafael da Silva Ferreira")
 
         APIClient.apollo.fetch(query: trainerQuery) { result, error in
             if let error = error {
