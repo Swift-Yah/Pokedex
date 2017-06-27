@@ -54,11 +54,13 @@ private extension HomeController {
 
 extension HomeController {
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        guard let pokemons = trainer?.ownedPokemons, !pokemons.isEmpty else { return 1 }
+        
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier: String = indexPath.section == 0 ? "PokedexStatus" : "Pokedex"
+        let cellIdentifier = indexPath.section == 0 ? "PokedexStatus" : "Pokedex"
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let count = trainer?.ownedPokemonsMeta.count ?? 0
         
@@ -76,6 +78,11 @@ extension HomeController {
             
             cell.textLabel?.text = greeting
             
+        case 1:
+            if let pokemon = trainer?.ownedPokemons?[indexPath.row] {
+                (cell as? PokedexViewCell)?.setup(model: pokemon)
+            }
+            
         default: break
         }
 
@@ -85,6 +92,7 @@ extension HomeController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 1
+        case 1: return trainer?.ownedPokemons?.count ?? 0
         default: return 0
         }
     }
