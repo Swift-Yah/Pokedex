@@ -18,7 +18,10 @@ final class PokedexViewCell: UITableViewCell {
 extension PokedexViewCell {
     func setup(model: TrainerQuery.Data.Trainer.OwnedPokemon) {
         if let urlString = model.url, let url = URL(string: urlString) {
-            pokemonImageView.kf.setImage(with: url)
+            let placeholderImage = #imageLiteral(resourceName: "PokeballClose").withRenderingMode(.alwaysTemplate)
+
+            pokemonImageView.tintColor = .lightGray
+            pokemonImageView.kf.setImage(with: url, placeholder: placeholderImage)
         }
         
         nameLabel.text = model.name
